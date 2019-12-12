@@ -1,5 +1,7 @@
 package com.cinema.dto;
 
+import com.cinema.enums.Genere;
+
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.HashMap;
@@ -21,10 +23,10 @@ public class Film implements Serializable {
     private String nom;
     private String sinopsis;
     private String caratula; // Camí on es troba la foto
-    private String genere; // F-ficció, A-Aventures, T-Terror, D-dibuixos
+    private Genere genere; // F-ficció, A-Aventures, T-Terror, D-dibuixos
     private Integer edatRec = 0; // Edat recomanada.0 Per tots els publics
     
-    private HashMap<Integer, String> horari = new HashMap<>();
+    private HashMap<Integer, Session> horari = new HashMap<>();
     private LocalDate dataEstreno;
     private Boolean estreno = false;
     
@@ -32,14 +34,15 @@ public class Film implements Serializable {
         this.id = id;
         this.nom = nom;
         this.sinopsis = sinopsis;
-    }    
+    }
 
-    public Film(Integer id, String nom, String sinopsis, String caratula, String genere, LocalDate dataEstreno) {
+    public Film(Integer id, String nom, String sinopsis, String caratula, Genere genere, Integer edatRec, LocalDate dataEstreno) {
         this.id = id;
         this.nom = nom;
         this.sinopsis = sinopsis;
         this.caratula = caratula;
         this.genere = genere;
+        this.edatRec = edatRec;
         this.dataEstreno = dataEstreno;
     }        
 
@@ -71,22 +74,25 @@ public class Film implements Serializable {
         return sinopsis;
     }
     
-    public String getGenere() {
+    public Genere getGenere() {
         return genere;
     }
 
-    public void setGenere(String genere) {
+    public void setGenere(Genere genere) {
         this.genere = genere;
     }
+
+
+
     public void setSinopsis(String sinopsis) {
         this.sinopsis = sinopsis;
     }
 
-    public HashMap<Integer, String> getHorari() {
+    public HashMap<Integer, Session> getHorari() {
         return horari;
     }
 
-    public void setHorari(HashMap<Integer, String> horari) {
+    public void setHorari(HashMap<Integer, Session> horari) {
         this.horari = horari;
     }
 

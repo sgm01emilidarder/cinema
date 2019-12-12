@@ -1,17 +1,21 @@
 package com.cinema.dto;
 
-public class User {
+import com.cinema.dto.Person;
+
+public class User extends Person{
 	private String userName;
 	private String userPassword;
-	private String nom;
-	
-	
-	public User(String userName, String userPassword, String nom) {
+	private String nomComplet;
+
+
+
+	public User(Person person, String userName, String userPassword, String nomComplet) {
+		super(person.getDni(), person.getNom(), person.getLlinatges(), person.getEmail());
 		this.userName = userName;
 		this.userPassword = userPassword;
-		this.nom = nom;
+		this.nomComplet = nomComplet;
 	}
-	
+
 	/**
 	 * @return the id
 	 */
@@ -27,14 +31,14 @@ public class User {
 	/**
 	 * @return the nom
 	 */
-	public String getNom() {
-		return nom;
+	public String getnomComplet() {
+		return nomComplet;
 	}
 	/**
 	 * @param nom the nom to set
 	 */
-	public void setNom(String nom) {
-		this.nom = nom;
+	public void setnomComplet(String nomComplet) {
+		this.nomComplet = nomComplet;
 	}
 	public String getUserPassword() {
 		return userPassword;
@@ -78,9 +82,17 @@ public class User {
 		}
 		return true;
 	}
+
 	@Override
 	public String toString() {
-		return "User [id=" + userName + ", nom=" + nom + "]";
+		return "User{" +
+				"userName='" + userName + '\'' +
+				", userPassword='" + userPassword + '\'' +
+				", nomComplet='" + nomComplet + '\'' +
+				", dni='" + this.getDni() + '\'' +
+				", nom='" + this.getNom() + '\'' +
+				", llinatges='" + this.getLlinatges() + '\'' +
+				", email='" + this.getEmail() +
+				'}';
 	}
-
 }

@@ -22,6 +22,16 @@
 		<c:out value="${film.id}" />
 		-
 		<c:out value="${film.nom}" />
+		-
+		<c:out value="${film.sinopsis}" />
+		-
+		<c:out value="${film.caratula}" />
+		-
+		<c:out value="${film.genere}" />
+		-
+		<c:out value="${film.edatRec}" />
+		-
+		<c:out value="${film.fechaEstreno}" />
 	</div>
 </c:forEach>
 

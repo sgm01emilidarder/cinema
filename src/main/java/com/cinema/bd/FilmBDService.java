@@ -1,16 +1,13 @@
 package com.cinema.bd;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.cinema.bd.BDConnectionMySQL;
 import com.cinema.dto.Film;
-import com.cinema.dto.Genere;
+import com.cinema.enums.Genere;
 
 public class FilmBDService {
 	
@@ -31,8 +28,13 @@ public class FilmBDService {
             if (resultat!=null) {
 	            while (resultat.next()) {
 	                int id = resultat.getInt("flm_id");
-	                String title = resultat.getString("flm_title");                
-	                list.add(new Film( Integer.valueOf(id), title, ""));
+	                String title = resultat.getString("flm_title");
+					String synopsis = resultat.getString("flm_synopsis");
+					String cover = resultat.getString("flm_cover");
+					String genere = resultat.getString("flm_genre");
+					int edatRec = resultat.getInt("flm_age_rating");
+					Date release = resultat.getDate("flm_date_release");
+					list.add(new Film( Integer.valueOf(id), title, synopsis, cover, Genere.valueOf(genere), Integer.valueOf(edatRec), release));
 	            }
             }
             sentencia.close();

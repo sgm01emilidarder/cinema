@@ -4,6 +4,7 @@ import com.cinema.enums.Genere;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.HashMap;
 
 /*
@@ -28,12 +29,23 @@ public class Film implements Serializable {
     
     private HashMap<Integer, Session> horari = new HashMap<>();
     private LocalDate dataEstreno;
+    private Date fechaEstreno;
     private Boolean estreno = false;
     
     public Film(Integer id, String nom, String sinopsis) {
         this.id = id;
         this.nom = nom;
         this.sinopsis = sinopsis;
+    }
+
+    public Film(Integer id, String nom, String sinopsis, String caratula, Genere genere, Integer edatRec, Date fechaEstreno) {
+        this.id = id;
+        this.nom = nom;
+        this.sinopsis = sinopsis;
+        this.caratula = caratula;
+        this.genere = genere;
+        this.edatRec = edatRec;
+        this.fechaEstreno = fechaEstreno;
     }
 
     public Film(Integer id, String nom, String sinopsis, String caratula, Genere genere, Integer edatRec, LocalDate dataEstreno) {
@@ -44,7 +56,7 @@ public class Film implements Serializable {
         this.genere = genere;
         this.edatRec = edatRec;
         this.dataEstreno = dataEstreno;
-    }        
+    }
 
     public Boolean getEstreno() {
         return estreno;
@@ -118,5 +130,13 @@ public class Film implements Serializable {
 
     public void setCaratula(String caratula) {
         this.caratula = caratula;
-    }    
+    }
+
+    public Date getFechaEstreno() {
+        return fechaEstreno;
+    }
+
+    public void setFechaEstreno(Date fechaEstreno) {
+        this.fechaEstreno = fechaEstreno;
+    }
 }

@@ -40,6 +40,7 @@ Aquesta pàgina mostrarà la llista de pel·lícules i filtrarà per gènere
          <a class="flex-sm-fill text-sm-center nav-link active mx-2" href="llista_films.jsp?genere=AVENTURES">Aventures</a>
          <a class="flex-sm-fill text-sm-center nav-link active mx-2" href="llista_films.jsp?genere=TERROR">Terror</a>
          <a class="flex-sm-fill text-sm-center nav-link active mx-2" href="llista_films.jsp?genere=DIBUIXOS">Dibuixos</a>
+        <a class="flex-sm-fill text-sm-center nav-link active mx-2" href="bd_llista_films.jsp">BD</a>
     </nav>
     
     <%-- Mostrar llista pel·lícules per gènere --%>

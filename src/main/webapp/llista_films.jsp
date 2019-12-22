@@ -57,6 +57,7 @@ Aquesta pàgina mostrarà la llista de pel·lícules i filtrarà per gènere
 
             </c:if>
         </c:forEach>
+
             
     </ul>
 <%@include file="footer.jsp" %>

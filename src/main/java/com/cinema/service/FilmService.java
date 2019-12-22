@@ -95,6 +95,8 @@ public class FilmService {
 		}
 	}
 
-	
+	public Film getFilm(Integer id) {
+		return llistaFilms.get(id);
+	}
 
 }

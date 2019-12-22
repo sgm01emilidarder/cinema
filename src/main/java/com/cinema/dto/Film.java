@@ -139,4 +139,20 @@ public class Film implements Serializable {
     public void setFechaEstreno(Date fechaEstreno) {
         this.fechaEstreno = fechaEstreno;
     }
+
+    @Override
+    public String toString() {
+        return "Film{" +
+                "id=" + id +
+                ", nom='" + nom + '\'' +
+                ", sinopsis='" + sinopsis + '\'' +
+                ", caratula='" + caratula + '\'' +
+                ", genere=" + genere +
+                ", edatRec=" + edatRec +
+                ", horari=" + horari +
+                ", dataEstreno=" + dataEstreno +
+                ", fechaEstreno=" + fechaEstreno +
+                ", estreno=" + estreno +
+                '}';
+    }
 }

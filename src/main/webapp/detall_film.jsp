@@ -16,6 +16,8 @@
     // Recuperam el codi de la pel·lícula
     Integer codiFilm = Integer.parseInt(request.getParameter("codi"));
     System.out.println("Codi film:" + codiFilm);
+    FilmService film = new FilmService();
+    System.out.println(film.getFilm(codiFilm).toString());
 
     //Comprovam si es troba a la 
     boolean trobada = false;
